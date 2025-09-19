@@ -17,7 +17,7 @@ public class Opgave02 {
 
         System.out.println("Leet speak conversion:");
         convertToLeetSpeak(characterArray);
-    }
+    }   
 
     private static int[] vokalCount(char[] array) {
         int[] counts = new int[8]; // a, e, i, o, u, æ, ø, å
@@ -47,7 +47,6 @@ public class Opgave02 {
     }*/
 
     public static void convertToLeetSpeak(char[] array){
-        System.out.println("hej");
         for(int i = 0; i<array.length; i++){
             switch (array[i]){
                 case 'a' -> array[i] = '4';
@@ -57,8 +56,10 @@ public class Opgave02 {
                 case 's' -> array[i] = '5';
                 case 't' -> array[i] = '7';
                 }
+
+                
         }
-        System.out.println(new String(array));
+        System.out.println(array);
     }
 
     private static char[] getCharacterArray() {

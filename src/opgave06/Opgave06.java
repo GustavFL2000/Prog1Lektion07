@@ -2,13 +2,21 @@ package opgave06;
 
 public class Opgave06 {
     public static void main(String[] args) {
-        char[] romanNumber = {'M', 'L', 'X', 'I'}; //1061
+        char[] romanNumber = {'X', 'I', 'X'}; //19
+        System.out.println("Roman number to Arabic number conversion from: " + String.valueOf(romanNumber));
         System.out.println(romanNumberToArabicNumber(romanNumber));
     }
 
     private static int romanNumberToArabicNumber(char[] romanNumber) {
-        //Din implementering her.
-        return 0;
+        int total = 0;
+        for (int i = 0; i < romanNumber.length; i++) {
+            if (i < romanNumber.length - 1 && SingleRomanNumberToArabicNumber(romanNumber[i]) < SingleRomanNumberToArabicNumber(romanNumber[i + 1])) {
+                total -= SingleRomanNumberToArabicNumber(romanNumber[i]);
+            } else {
+                total += SingleRomanNumberToArabicNumber(romanNumber[i]);
+            }
+        }
+        return total;
     }
 
     private static int SingleRomanNumberToArabicNumber(char roman) {

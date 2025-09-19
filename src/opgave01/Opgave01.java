@@ -35,8 +35,8 @@ public class Opgave01 {
     }
 
     // Opgave a:
-    public static void printArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
+    public static void printArray(int[] array){
+        for(int i = 0; i<array.length; i++){
             System.out.print(array[i] + " ");
         }
         System.out.println();
