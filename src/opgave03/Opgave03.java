@@ -3,6 +3,16 @@ package opgave03;
 public class Opgave03 {
     public static void main(String[] args) {
         System.out.println(weekday(4, 14));
+        String[] days = {"Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"};
+        printArray(days);
+
+    }
+
+    public static void printArray(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 
     public static String weekday(int dayOfWeek, int daysInTheFuture) {

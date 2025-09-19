@@ -1,8 +1,64 @@
 package opgave02;
+import java.util.*;
 
 public class Opgave02 {
     public static void main(String[] args) {
         char[] characterArray = getCharacterArray();
+
+        System.out.println("Vowel counts:");
+        int[] counts = vokalCount(characterArray);
+        String[] vowels = {"a", "e", "i", "o", "u", "æ", "ø", "å"};
+        for (int i = 0; i < counts.length; i++) {
+            System.out.println(vowels[i] + ": " + counts[i]);
+        }
+
+        /*System.out.println("Scrambled array:");
+        scrambleCharArray(characterArray);*/
+
+        System.out.println("Leet speak conversion:");
+        convertToLeetSpeak(characterArray);
+    }
+
+    private static int[] vokalCount(char[] array) {
+        int[] counts = new int[8]; // a, e, i, o, u, æ, ø, å
+        for (char c : array) { // For each character in the array
+            switch (Character.toLowerCase(c)) {
+                case 'a' -> counts[0]++;
+                case 'e' -> counts[1]++;
+                case 'i' -> counts[2]++;
+                case 'o' -> counts[3]++;
+                case 'u' -> counts[4]++;
+                case 'æ' -> counts[5]++; 
+                case 'ø' -> counts[6]++;
+                case 'å' -> counts[7]++;
+            }
+        }
+        return counts;
+    }
+
+    /*public static void scrambleCharArray(char[] array){
+        for(char c: array){
+            int randomIndex = (int) (Math.random() * array.length);
+            char temp = c;
+            c = array[randomIndex];
+            array[randomIndex] = temp;
+            System.out.println(Arrays.toString(array));
+        }
+    }*/
+
+    public static void convertToLeetSpeak(char[] array){
+        System.out.println("hej");
+        for(int i = 0; i<array.length; i++){
+            switch (array[i]){
+                case 'a' -> array[i] = '4';
+                case 'e' -> array[i] = '3';
+                case 'i' -> array[i] = '1';
+                case 'o' -> array[i] = '0';
+                case 's' -> array[i] = '5';
+                case 't' -> array[i] = '7';
+                }
+        }
+        System.out.println(new String(array));
     }
 
     private static char[] getCharacterArray() {
